@@ -1,0 +1,2 @@
+javac starter.java
+pause
