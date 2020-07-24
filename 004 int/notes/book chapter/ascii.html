@@ -1,0 +1,517 @@
+<html>
+
+<head>
+<title>H.A.2.2 - ASCII</title>
+<style>
+<!--
+ /* Style Definitions */
+p.MsoNormal, li.MsoNormal, div.MsoNormal { mso-pagination: widow-orphan; mso-layout-grid-align: none; punctuation-wrap: 
+			   simple; text-autospace: none; font-size: 12.0pt; 
+			   mso-bidi-font-size: 10.0pt; font-family: Times New Roman; 
+			   mso-fareast-font-family: Times New Roman; color: black; 
+			   margin-left: 0in; margin-right: 0in; margin-top: 0in; 
+			   margin-bottom: .0001pt }
+p.MsoFootnoteText, li.MsoFootnoteText, div.MsoFootnoteText { text-indent: -9.0pt; mso-pagination: widow-orphan; mso-layout-grid-align: none; 
+			   punctuation-wrap: simple; text-autospace: none; font-size: 
+			   10.0pt; font-family: Times New Roman; mso-fareast-font-family: 
+			   Times New Roman; color: black; margin-left: 9.0pt; 
+			   margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt }
+p.MsoHeader, li.MsoHeader, div.MsoHeader { mso-pagination: widow-orphan; tab-stops: center 3.0in right 6.0in; 
+			   mso-layout-grid-align: none; punctuation-wrap: simple; 
+			   text-autospace: none; font-size: 12.0pt; mso-bidi-font-size: 
+			   10.0pt; font-family: Times New Roman; mso-fareast-font-family: 
+			   Times New Roman; color: black; margin-left: 0in; margin-right: 
+			   0in; margin-top: 0in; margin-bottom: .0001pt }
+p.MsoFooter, li.MsoFooter, div.MsoFooter { mso-pagination: widow-orphan; tab-stops: center 3.25in right 6.5in; 
+			   mso-layout-grid-align: none; punctuation-wrap: simple; 
+			   text-autospace: none; font-size: 10.0pt; font-family: 
+			   Times New Roman; mso-fareast-font-family: Times New Roman; 
+			   color: black; margin-left: 0in; margin-right: 0in; margin-top: 
+			   0in; margin-bottom: .0001pt }
+p.h1, li.h1, div.h1 { mso-style-name: h1; text-indent: -.25in; mso-pagination: widow-orphan; 
+			   mso-layout-grid-align: none; punctuation-wrap: simple; 
+			   text-autospace: none; font-size: 12.0pt; mso-bidi-font-size: 
+			   10.0pt; font-family: Times New Roman; mso-fareast-font-family: 
+			   Times New Roman; color: black; margin-left: .25in; 
+			   margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt }
+p.i1, li.i1, div.i1 { mso-style-name: i1; text-indent: -14.0pt; mso-pagination: widow-orphan; 
+			   mso-layout-grid-align: none; punctuation-wrap: simple; 
+			   text-autospace: none; font-size: 12.0pt; mso-bidi-font-size: 
+			   10.0pt; font-family: Times New Roman; mso-fareast-font-family: 
+			   Times New Roman; color: black; margin-left: 27.0pt; 
+			   margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt }
+p.i2, li.i2, div.i2 { mso-style-name: i2; text-indent: -14.0pt; mso-pagination: widow-orphan; 
+			   mso-layout-grid-align: none; punctuation-wrap: simple; 
+			   text-autospace: none; font-size: 12.0pt; mso-bidi-font-size: 
+			   10.0pt; font-family: Times New Roman; mso-fareast-font-family: 
+			   Times New Roman; color: black; margin-left: 40.0pt; 
+			   margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt }
+p.i3, li.i3, div.i3 { mso-style-name: i3; mso-style-parent: i2; text-indent: -14.0pt; 
+			   mso-pagination: widow-orphan; mso-layout-grid-align: none; 
+			   punctuation-wrap: simple; text-autospace: none; font-size: 
+			   12.0pt; mso-bidi-font-size: 10.0pt; font-family: 
+			   Times New Roman; mso-fareast-font-family: Times New Roman; 
+			   color: black; margin-left: .75in; margin-right: 0in; 
+			   margin-top: 0in; margin-bottom: .0001pt }
+p.i4, li.i4, div.i4 { mso-style-name: i4; mso-style-parent: i3; text-indent: -14.0pt; 
+			   mso-pagination: widow-orphan; mso-layout-grid-align: none; 
+			   punctuation-wrap: simple; text-autospace: none; font-size: 
+			   12.0pt; mso-bidi-font-size: 10.0pt; font-family: 
+			   Times New Roman; mso-fareast-font-family: Times New Roman; 
+			   color: black; margin-left: 67.0pt; margin-right: 0in; 
+			   margin-top: 0in; margin-bottom: .0001pt }
+p.i5, li.i5, div.i5 { mso-style-name: i5; mso-style-parent: i4; text-indent: -14.0pt; 
+			   mso-pagination: widow-orphan; mso-layout-grid-align: none; 
+			   punctuation-wrap: simple; text-autospace: none; font-size: 
+			   12.0pt; mso-bidi-font-size: 10.0pt; font-family: 
+			   Times New Roman; mso-fareast-font-family: Times New Roman; 
+			   color: black; margin-left: 81.0pt; margin-right: 0in; 
+			   margin-top: 0in; margin-bottom: .0001pt }
+p.Lab, li.Lab, div.Lab { mso-style-name: Lab; mso-pagination: widow-orphan; tab-stops: 
+			   .25in .5in .75in 1.0in 1.25in 1.5in 1.75in 2.0in 2.25in 2.5in; 
+			   mso-layout-grid-align: none; punctuation-wrap: simple; 
+			   text-autospace: none; font-size: 12.0pt; mso-bidi-font-size: 
+			   10.0pt; font-family: Times New Roman; mso-fareast-font-family: 
+			   Times New Roman; color: black; margin-left: 0in; margin-right: 
+			   0in; margin-top: 0in; margin-bottom: .0001pt }
+p.obj, li.obj, div.obj { mso-style-name: obj; text-indent: -1.75in; mso-pagination: widow-orphan; 
+			   tab-stops: 1.5in; mso-layout-grid-align: none; 
+			   punctuation-wrap: simple; text-autospace: none; font-size: 
+			   12.0pt; mso-bidi-font-size: 10.0pt; font-family: 
+			   Times New Roman; mso-fareast-font-family: Times New Roman; 
+			   color: black; margin-left: 1.75in; margin-right: 0in; 
+			   margin-top: 0in; margin-bottom: .0001pt }
+p.Heading, li.Heading, div.Heading { mso-style-name: Heading; text-align: center; mso-pagination: widow-orphan; 
+			   mso-layout-grid-align: none; punctuation-wrap: simple; 
+			   text-autospace: none; font-size: 14.0pt; mso-bidi-font-size: 
+			   10.0pt; font-family: Arial; mso-fareast-font-family: 
+			   Times New Roman; mso-bidi-font-family: Times New Roman; color: 
+			   black; text-transform: uppercase; font-weight: bold; 
+			   mso-bidi-font-weight: normal; margin-left: 0in; margin-right: 
+			   0in; margin-top: 0in; margin-bottom: .0001pt }
+p.obj2, li.obj2, div.obj2 { mso-style-name: obj2; mso-pagination: widow-orphan; mso-layout-grid-align: 
+			   none; punctuation-wrap: simple; text-autospace: none; 
+			   font-size: 12.0pt; mso-bidi-font-size: 10.0pt; font-family: 
+			   Times New Roman; mso-fareast-font-family: Times New Roman; 
+			   color: black; margin-left: 2.0in; margin-right: 0in; 
+			   margin-top: 0in; margin-bottom: .0001pt }
+p.section, li.section, div.section { mso-style-name: section; text-indent: -2.0in; mso-pagination: widow-orphan; 
+			   mso-layout-grid-align: none; punctuation-wrap: simple; 
+			   text-autospace: none; font-size: 12.0pt; mso-bidi-font-size: 
+			   10.0pt; font-family: Times New Roman; mso-fareast-font-family: 
+			   Times New Roman; color: black; margin-left: 2.0in; 
+			   margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt }
+p.two, li.two, div.two { mso-style-name: two; mso-pagination: widow-orphan; mso-layout-grid-align: none; 
+			   punctuation-wrap: simple; text-autospace: none; font-size: 
+			   12.0pt; mso-bidi-font-size: 10.0pt; font-family: 
+			   Times New Roman; mso-fareast-font-family: Times New Roman; 
+			   color: black; margin-left: 2.0in; margin-right: 0in; 
+			   margin-top: 0in; margin-bottom: .0001pt }
+p.heading0, li.heading0, div.heading0 { mso-style-name: heading; text-align: center; mso-pagination: widow-orphan; 
+			   mso-layout-grid-align: none; punctuation-wrap: simple; 
+			   text-autospace: none; font-size: 14.0pt; mso-bidi-font-size: 
+			   10.0pt; font-family: Arial; mso-fareast-font-family: 
+			   Times New Roman; mso-bidi-font-family: Times New Roman; color: 
+			   black; text-transform: uppercase; font-weight: bold; 
+			   mso-bidi-font-weight: normal; margin-left: 0in; margin-right: 
+			   0in; margin-top: 0in; margin-bottom: .0001pt }
+p.vocab, li.vocab, div.vocab { mso-style-name: vocab; mso-style-parent: section; text-indent: -2.0in; 
+			   mso-pagination: widow-orphan; tab-stops: 4.0in; 
+			   mso-layout-grid-align: none; punctuation-wrap: simple; 
+			   text-autospace: none; font-size: 12.0pt; mso-bidi-font-size: 
+			   10.0pt; font-family: Times New Roman; mso-fareast-font-family: 
+			   Times New Roman; color: black; text-transform: uppercase; 
+			   margin-left: 2.0in; margin-right: 0in; margin-top: 0in; 
+			   margin-bottom: .0001pt }
+p.nummain, li.nummain, div.nummain { mso-style-name: nummain; mso-style-parent: two; text-indent: -.25in; 
+			   mso-pagination: widow-orphan; mso-layout-grid-align: none; 
+			   punctuation-wrap: simple; text-autospace: none; font-size: 
+			   12.0pt; mso-bidi-font-size: 10.0pt; font-family: 
+			   Times New Roman; mso-fareast-font-family: Times New Roman; 
+			   color: black; margin-left: 2.25in; margin-right: 0in; 
+			   margin-top: 0in; margin-bottom: .0001pt }
+p.nm, li.nm, div.nm { mso-style-name: nm; mso-style-parent: two; text-indent: -.25in; 
+			   mso-pagination: widow-orphan; mso-layout-grid-align: none; 
+			   punctuation-wrap: simple; text-autospace: none; font-size: 
+			   12.0pt; mso-bidi-font-size: 10.0pt; font-family: 
+			   Times New Roman; mso-fareast-font-family: Times New Roman; 
+			   color: black; margin-left: 2.25in; margin-right: 0in; 
+			   margin-top: 0in; margin-bottom: .0001pt }
+p.note, li.note, div.note { mso-style-name: note; mso-style-parent: nm; mso-pagination: widow-orphan; 
+			   mso-layout-grid-align: none; punctuation-wrap: simple; 
+			   text-autospace: none; font-size: 9.0pt; mso-bidi-font-size: 
+			   10.0pt; font-family: Times New Roman; mso-fareast-font-family: 
+			   Times New Roman; color: black; font-weight: bold; 
+			   mso-bidi-font-weight: normal; margin-left: 0in; margin-right: 
+			   0in; margin-top: 0in; margin-bottom: .0001pt }
+p.code, li.code, div.code { mso-style-name: code; mso-style-parent: nm; text-indent: -.25in; 
+			   mso-pagination: widow-orphan; tab-stops: 2.75in 3.0in 3.25in; 
+			   mso-layout-grid-align: none; punctuation-wrap: simple; 
+			   text-autospace: none; font-size: 12.0pt; mso-bidi-font-size: 
+			   10.0pt; font-family: Times New Roman; mso-fareast-font-family: 
+			   Times New Roman; color: black; margin-left: 2.5in; 
+			   margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt }
+p.code2, li.code2, div.code2 { mso-style-name: code2; mso-style-parent: code; text-indent: -.25in; 
+			   mso-pagination: widow-orphan; tab-stops: 
+			   2.75in 3.0in 3.25in 3.5in; mso-layout-grid-align: none; 
+			   punctuation-wrap: simple; text-autospace: none; font-size: 
+			   12.0pt; mso-bidi-font-size: 10.0pt; font-family: 
+			   Times New Roman; mso-fareast-font-family: Times New Roman; 
+			   color: black; margin-left: 2.75in; margin-right: 0in; 
+			   margin-top: 0in; margin-bottom: .0001pt }
+
+-->
+</style>
+</head>
+
+<body lang="EN-US" style="tab-interval:.5in">
+
+<div class="Section1">
+	<p class="Heading">ASCII Characters - A Partial List</p>
+	<p class="MsoNormal"><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+	<p class="MsoNormal"
+	style="tab-stops:center .5in 1.5in bar 2.0in center 2.5in 3.5in bar 4.0in center 4.5in 5.5in"><span
+	style="font-size:10.0pt;font-family:&quot;Courier New&quot;"><span
+	style="mso-tab-count:
+1">&nbsp;&nbsp; </span>Ordinal<span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp; </span>Character<span
+	style="mso-tab-count:1">&nbsp;&nbsp;&nbsp; </span>Ordinal<span
+	style="mso-tab-count:1">&nbsp;&nbsp;&nbsp; </span>Character<span
+	style="mso-tab-count:1">&nbsp;&nbsp;&nbsp; </span>Ordinal<span
+	style="mso-tab-count:1">&nbsp;&nbsp;&nbsp; </span>Character<o:p></o:p></span></p>
+	<p class="MsoNormal"
+	style="tab-stops:center .5in 1.5in bar 2.0in center 2.5in 3.5in bar 4.0in center 4.5in 5.5in"><span
+	style="font-size:10.0pt;font-family:&quot;Courier New&quot;"><span
+	style="mso-tab-count:
+1">&nbsp; </span>Position<span style="mso-tab-count:2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>Position<span style="mso-tab-count:2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>Position<o:p></o:p></span></p>
+	<p class="MsoNormal"
+	style="tab-stops:center .5in 1.5in bar 2.0in center 2.5in 3.5in bar 4.0in center 4.5in 5.5in"><span
+	style="font-size:10.0pt;font-family:&quot;Courier New&quot;"><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+	<p class="MsoNormal"
+	style="tab-stops:center .5in 1.5in bar 2.0in center 2.5in 3.5in bar 4.0in center 4.5in 5.5in"><span
+	style="font-size:10.0pt;font-family:&quot;Courier New&quot;"><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+	<p class="MsoNormal"
+	style="line-height:18.0pt;tab-stops:center .5in 1.5in bar 2.0in center 2.5in 3.5in bar 4.0in center 4.5in 5.5in"><span
+	style="font-size:10.0pt;font-family:&quot;Courier New&quot;"><span
+	style="mso-tab-count:
+1">&nbsp;&nbsp;&nbsp;&nbsp; </span>32<span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>space<span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>64<span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>@<span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>96<span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>'<o:p></o:p></span></p>
+	<p class="MsoNormal"
+	style="line-height:18.0pt;tab-stops:center .5in 1.5in bar 2.0in center 2.5in 3.5in bar 4.0in center 4.5in 5.5in"><span
+	style="font-size:10.0pt;font-family:&quot;Courier New&quot;"><span
+	style="mso-tab-count:
+1">&nbsp;&nbsp;&nbsp;&nbsp; </span>33<span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>!<span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>65<span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>A<span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>97<span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>a<o:p></o:p></span></p>
+	<p class="MsoNormal"
+	style="line-height:18.0pt;tab-stops:center .5in 1.5in bar 2.0in center 2.5in 3.5in bar 4.0in center 4.5in 5.5in"><span
+	style="font-size:10.0pt;font-family:&quot;Courier New&quot;"><span
+	style="mso-tab-count:
+1">&nbsp;&nbsp;&nbsp;&nbsp; </span>34<span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>&quot;<span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>66<span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>B<span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>98<span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>b<o:p></o:p></span></p>
+	<p class="MsoNormal"
+	style="line-height:18.0pt;tab-stops:center .5in 1.5in bar 2.0in center 2.5in 3.5in bar 4.0in center 4.5in 5.5in"><span
+	style="font-size:10.0pt;font-family:&quot;Courier New&quot;"><span
+	style="mso-tab-count:
+1">&nbsp;&nbsp;&nbsp;&nbsp; </span>35<span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>#<span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>67<span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>C<span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>99<span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>c<o:p></o:p></span></p>
+	<p class="MsoNormal"
+	style="line-height:18.0pt;tab-stops:center .5in 1.5in bar 2.0in center 2.5in 3.5in bar 4.0in center 4.5in 5.5in"><span
+	style="font-size:10.0pt;font-family:&quot;Courier New&quot;"><span
+	style="mso-tab-count:
+1">&nbsp;&nbsp;&nbsp;&nbsp; </span>36<span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>$<span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>68<span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>D<span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>100<span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>d<o:p></o:p></span></p>
+	<p class="MsoNormal"
+	style="line-height:18.0pt;tab-stops:center .5in 1.5in bar 2.0in center 2.5in 3.5in bar 4.0in center 4.5in 5.5in"><span
+	style="font-size:10.0pt;font-family:&quot;Courier New&quot;"><span
+	style="mso-tab-count:
+1">&nbsp;&nbsp;&nbsp;&nbsp; </span>37<span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>%<span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>69<span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>E<span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>101<span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>e<o:p></o:p></span></p>
+	<p class="MsoNormal"
+	style="line-height:18.0pt;tab-stops:center .5in 1.5in bar 2.0in center 2.5in 3.5in bar 4.0in center 4.5in 5.5in"><span
+	style="font-size:10.0pt;font-family:&quot;Courier New&quot;"><span
+	style="mso-tab-count:
+1">&nbsp;&nbsp;&nbsp;&nbsp; </span>38<span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>&amp;<span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>70<span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>F<span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>102<span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>f<o:p></o:p></span></p>
+	<p class="MsoNormal"
+	style="line-height:18.0pt;tab-stops:center .5in 1.5in bar 2.0in center 2.5in 3.5in bar 4.0in center 4.5in 5.5in"><span
+	style="font-size:10.0pt;font-family:&quot;Courier New&quot;"><span
+	style="mso-tab-count:
+1">&nbsp;&nbsp;&nbsp;&nbsp; </span>39<span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>'<span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>71<span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>G<span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>103<span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>g<o:p></o:p></span></p>
+	<p class="MsoNormal"
+	style="line-height:18.0pt;tab-stops:center .5in 1.5in bar 2.0in center 2.5in 3.5in bar 4.0in center 4.5in 5.5in"><span
+	style="font-size:10.0pt;font-family:&quot;Courier New&quot;"><span
+	style="mso-tab-count:
+1">&nbsp;&nbsp;&nbsp;&nbsp; </span>40<span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>(<span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>72<span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>H<span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>104<span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>h<o:p></o:p></span></p>
+	<p class="MsoNormal"
+	style="line-height:18.0pt;tab-stops:center .5in 1.5in bar 2.0in center 2.5in 3.5in bar 4.0in center 4.5in 5.5in"><span
+	style="font-size:10.0pt;font-family:&quot;Courier New&quot;"><span
+	style="mso-tab-count:
+1">&nbsp;&nbsp;&nbsp;&nbsp; </span>41<span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>)<span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>73<span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>I<span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>105<span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>i<o:p></o:p></span></p>
+	<p class="MsoNormal"
+	style="line-height:18.0pt;tab-stops:center .5in 1.5in bar 2.0in center 2.5in 3.5in bar 4.0in center 4.5in 5.5in"><span
+	style="font-size:10.0pt;font-family:&quot;Courier New&quot;"><span
+	style="mso-tab-count:
+1">&nbsp;&nbsp;&nbsp;&nbsp; </span>42<span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>*<span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>74<span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>J<span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>106<span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>j<o:p></o:p></span></p>
+	<p class="MsoNormal"
+	style="line-height:18.0pt;tab-stops:center .5in 1.5in bar 2.0in center 2.5in 3.5in bar 4.0in center 4.5in 5.5in"><span
+	style="font-size:10.0pt;font-family:&quot;Courier New&quot;"><span
+	style="mso-tab-count:
+1">&nbsp;&nbsp;&nbsp;&nbsp; </span>43<span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>+<span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>75<span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>K<span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>107<span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>k<o:p></o:p></span></p>
+	<p class="MsoNormal"
+	style="line-height:18.0pt;tab-stops:center .5in 1.5in bar 2.0in center 2.5in 3.5in bar 4.0in center 4.5in 5.5in"><span
+	style="font-size:10.0pt;font-family:&quot;Courier New&quot;"><span
+	style="mso-tab-count:
+1">&nbsp;&nbsp;&nbsp;&nbsp; </span>44<span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>,<span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>76<span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>L<span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>108<span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>l<o:p></o:p></span></p>
+	<p class="MsoNormal"
+	style="line-height:18.0pt;tab-stops:center .5in 1.5in bar 2.0in center 2.5in 3.5in bar 4.0in center 4.5in 5.5in"><span
+	style="font-size:10.0pt;font-family:&quot;Courier New&quot;"><span
+	style="mso-tab-count:
+1">&nbsp;&nbsp;&nbsp;&nbsp; </span>45<span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>-<span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>77<span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>M<span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>109<span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>m<o:p></o:p></span></p>
+	<p class="MsoNormal"
+	style="line-height:18.0pt;tab-stops:center .5in 1.5in bar 2.0in center 2.5in 3.5in bar 4.0in center 4.5in 5.5in"><span
+	style="font-size:10.0pt;font-family:&quot;Courier New&quot;"><span
+	style="mso-tab-count:
+1">&nbsp;&nbsp;&nbsp;&nbsp; </span>46<span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>.<span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>78<span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>N<span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>110<span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>n<o:p></o:p></span></p>
+	<p class="MsoNormal"
+	style="line-height:18.0pt;tab-stops:center .5in 1.5in bar 2.0in center 2.5in 3.5in bar 4.0in center 4.5in 5.5in"><span
+	style="font-size:10.0pt;font-family:&quot;Courier New&quot;"><span
+	style="mso-tab-count:
+1">&nbsp;&nbsp;&nbsp;&nbsp; </span>47<span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>/<span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>79<span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>O<span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>111<span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>o<o:p></o:p></span></p>
+	<p class="MsoNormal"
+	style="line-height:18.0pt;tab-stops:center .5in 1.5in bar 2.0in center 2.5in 3.5in bar 4.0in center 4.5in 5.5in"><span
+	style="font-size:10.0pt;font-family:&quot;Courier New&quot;"><span
+	style="mso-tab-count:
+1">&nbsp;&nbsp;&nbsp;&nbsp; </span>48<span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>0<span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>80<span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>P<span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>112<span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>p<o:p></o:p></span></p>
+	<p class="MsoNormal"
+	style="line-height:18.0pt;tab-stops:center .5in 1.5in bar 2.0in center 2.5in 3.5in bar 4.0in center 4.5in 5.5in"><span
+	style="font-size:10.0pt;font-family:&quot;Courier New&quot;"><span
+	style="mso-tab-count:
+1">&nbsp;&nbsp;&nbsp;&nbsp; </span>49<span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>1<span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>81<span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>Q<span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>113<span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>q<o:p></o:p></span></p>
+	<p class="MsoNormal"
+	style="line-height:18.0pt;tab-stops:center .5in 1.5in bar 2.0in center 2.5in 3.5in bar 4.0in center 4.5in 5.5in"><span
+	style="font-size:10.0pt;font-family:&quot;Courier New&quot;"><span
+	style="mso-tab-count:
+1">&nbsp;&nbsp;&nbsp;&nbsp; </span>50<span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>2<span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>82<span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>R<span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>114<span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>r<o:p></o:p></span></p>
+	<p class="MsoNormal"
+	style="line-height:18.0pt;tab-stops:center .5in 1.5in bar 2.0in center 2.5in 3.5in bar 4.0in center 4.5in 5.5in"><span
+	style="font-size:10.0pt;font-family:&quot;Courier New&quot;"><span
+	style="mso-tab-count:
+1">&nbsp;&nbsp;&nbsp;&nbsp; </span>51<span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>3<span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>83<span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>S<span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>115<span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>s<o:p></o:p></span></p>
+	<p class="MsoNormal"
+	style="line-height:18.0pt;tab-stops:center .5in 1.5in bar 2.0in center 2.5in 3.5in bar 4.0in center 4.5in 5.5in"><span
+	style="font-size:10.0pt;font-family:&quot;Courier New&quot;"><span
+	style="mso-tab-count:
+1">&nbsp;&nbsp;&nbsp;&nbsp; </span>52<span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>4<span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>84<span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>T<span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>116<span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>t<o:p></o:p></span></p>
+	<p class="MsoNormal"
+	style="line-height:18.0pt;tab-stops:center .5in 1.5in bar 2.0in center 2.5in 3.5in bar 4.0in center 4.5in 5.5in"><span
+	style="font-size:10.0pt;font-family:&quot;Courier New&quot;"><span
+	style="mso-tab-count:
+1">&nbsp;&nbsp;&nbsp;&nbsp; </span>53<span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>5<span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>85<span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>U<span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>117<span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>u<o:p></o:p></span></p>
+	<p class="MsoNormal"
+	style="line-height:18.0pt;tab-stops:center .5in 1.5in bar 2.0in center 2.5in 3.5in bar 4.0in center 4.5in 5.5in"><span
+	style="font-size:10.0pt;font-family:&quot;Courier New&quot;"><span
+	style="mso-tab-count:
+1">&nbsp;&nbsp;&nbsp;&nbsp; </span>54<span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>6<span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>86<span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>V<span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>118<span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>v<o:p></o:p></span></p>
+	<p class="MsoNormal"
+	style="line-height:18.0pt;tab-stops:center .5in 1.5in bar 2.0in center 2.5in 3.5in bar 4.0in center 4.5in 5.5in"><span
+	style="font-size:10.0pt;font-family:&quot;Courier New&quot;"><span
+	style="mso-tab-count:
+1">&nbsp;&nbsp;&nbsp;&nbsp; </span>55<span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>7<span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>87<span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>W<span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>119<span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>w<o:p></o:p></span></p>
+	<p class="MsoNormal"
+	style="line-height:18.0pt;tab-stops:center .5in 1.5in bar 2.0in center 2.5in 3.5in bar 4.0in center 4.5in 5.5in"><span
+	style="font-size:10.0pt;font-family:&quot;Courier New&quot;"><span
+	style="mso-tab-count:
+1">&nbsp;&nbsp;&nbsp;&nbsp; </span>56<span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>8<span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>88<span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>X<span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>120<span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>x<o:p></o:p></span></p>
+	<p class="MsoNormal"
+	style="line-height:18.0pt;tab-stops:center .5in 1.5in bar 2.0in center 2.5in 3.5in bar 4.0in center 4.5in 5.5in"><span
+	style="font-size:10.0pt;font-family:&quot;Courier New&quot;"><span
+	style="mso-tab-count:
+1">&nbsp;&nbsp;&nbsp;&nbsp; </span>57<span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>9<span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>89<span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>Y<span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>121<span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>y<o:p></o:p></span></p>
+	<p class="MsoNormal"
+	style="line-height:18.0pt;tab-stops:center .5in 1.5in bar 2.0in center 2.5in 3.5in bar 4.0in center 4.5in 5.5in"><span
+	style="font-size:10.0pt;font-family:&quot;Courier New&quot;"><span
+	style="mso-tab-count:
+1">&nbsp;&nbsp;&nbsp;&nbsp; </span>58<span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>:<span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>90<span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>Z<span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>122<span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>z<o:p></o:p></span></p>
+	<p class="MsoNormal"
+	style="line-height:18.0pt;tab-stops:center .5in 1.5in bar 2.0in center 2.5in 3.5in bar 4.0in center 4.5in 5.5in"><span
+	style="font-size:10.0pt;font-family:&quot;Courier New&quot;"><span
+	style="mso-tab-count:
+1">&nbsp;&nbsp;&nbsp;&nbsp; </span>59<span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>;<span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>91<span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>[<span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>123<span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>{<o:p></o:p></span></p>
+	<p class="MsoNormal"
+	style="line-height:18.0pt;tab-stops:center .5in 1.5in bar 2.0in center 2.5in 3.5in bar 4.0in center 4.5in 5.5in"><span
+	style="font-size:10.0pt;font-family:&quot;Courier New&quot;"><span
+	style="mso-tab-count:
+1">&nbsp;&nbsp;&nbsp;&nbsp; </span>60<span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>&lt;<span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>92<span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>\<span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>124<span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>|<o:p></o:p></span></p>
+	<p class="MsoNormal"
+	style="line-height:18.0pt;tab-stops:center .5in 1.5in bar 2.0in center 2.5in 3.5in bar 4.0in center 4.5in 5.5in"><span
+	style="font-size:10.0pt;font-family:&quot;Courier New&quot;"><span
+	style="mso-tab-count:
+1">&nbsp;&nbsp;&nbsp;&nbsp; </span>61<span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>=<span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>93<span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>]<span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>125<span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>}<o:p></o:p></span></p>
+	<p class="MsoNormal"
+	style="line-height:18.0pt;tab-stops:center .5in 1.5in bar 2.0in center 2.5in 3.5in bar 4.0in center 4.5in 5.5in"><span
+	style="font-size:10.0pt;font-family:&quot;Courier New&quot;"><span
+	style="mso-tab-count:
+1">&nbsp;&nbsp;&nbsp;&nbsp; </span>62<span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>&gt;<span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>94<span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>^<span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>126<span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>~<o:p></o:p></span></p>
+	<p class="MsoNormal"
+	style="line-height:18.0pt;tab-stops:center .5in 1.5in bar 2.0in center 2.5in 3.5in bar 4.0in center 4.5in 5.5in"><span
+	style="font-size:10.0pt;font-family:&quot;Courier New&quot;"><span
+	style="mso-tab-count:
+1">&nbsp;&nbsp;&nbsp;&nbsp; </span>63<span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>?<span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>95<span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span>-<span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span><o:p></o:p></span></p>
+</div>
+
+</body>
+
+</html>
