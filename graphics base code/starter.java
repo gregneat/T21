@@ -1,23 +1,20 @@
 import pkg.*;
 
-public class starter implements InputControl {
-
-	
-
-	public static void main(String args[])
-        {
-			// following line is necessary for onMouseClick, don't change
-			MouseController mC = new MouseController(Canvas.getInstance(),new starter());
-			// put your code here:
-			
+public class starter implements InputKeyControl {
 		
+		
+        public static void main(String args[])
+        {
+			// please leave following line alone, necessary for keyboard input
+			KeyController mC = new KeyController(Canvas.getInstance(),new starter());
+			
+			// enter code here
 			
 		}
-
-
-		public void onMouseClick(double x, double y){
-			// and/or here
-			
-	
+		public void keyPress(String s)
+		{
+			// enter code here
+			// note, s is the String representation of the key pressed
 		}
+
 }

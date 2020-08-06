@@ -1,7 +1,5 @@
 //HIDE
-
 package pkg;
-
 public class Color
 {
     private int red;
