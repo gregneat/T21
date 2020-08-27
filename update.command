@@ -1,3 +1,3 @@
 cd Desktop/T21
-git fetch origin > /dev/null
-git pull origin
+git fetch origin master > /dev/null
+git reset --hard FETCH_HEAD
