@@ -1,2 +1,2 @@
-javac --release 10 *.java
+javac --release 8 *.java
 pause
