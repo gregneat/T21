@@ -137,4 +137,14 @@ public class Ellipse implements Shape
             g2.draw(ellipse);
         }
     }
+	// added by Neato 10/21/18
+	
+	public boolean contains(Rectangle a)
+	{
+		if(x < a.getX() + a.getWidth() && x + width > a.getX() && y < a.getY() + a.getHeight() && y + height > a.getY())
+		{ 
+			return true;
+		}
+		return false;
+	}
 }

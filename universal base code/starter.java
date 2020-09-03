@@ -1,6 +1,6 @@
 import pkg.*;
 
-public class starter implements InputKeyControl {
+public class starter implements InputControl, InputKeyControl {
 		
 		
 		public static void main(String args[])
