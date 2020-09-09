@@ -1,4 +1,4 @@
-cd Desktop/T21
+cd "dirname "$0"`"
 git fetch origin master
 git reset --hard FETCH_HEAD
 find . -name "*.command" -exec chmod +x {} \;
