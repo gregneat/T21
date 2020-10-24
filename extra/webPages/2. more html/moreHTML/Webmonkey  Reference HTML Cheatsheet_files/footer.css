@@ -1,0 +1,60 @@
+.footTxt {
+	FONT-SIZE: 9px; COLOR: #333333; LINE-HEIGHT: 15px; FONT-FAMILY: Verdana,Sans-serif
+}
+.foot {
+	COLOR: #000000; TEXT-DECORATION: none
+}
+.foot:hover {
+	COLOR: #000000
+}
+.foot:visited {
+	COLOR: #000000
+}
+.footU {
+	COLOR: #000000; TEXT-DECORATION: underline
+}
+.footU:hover {
+	COLOR: #000000
+}
+.footU:visited {
+	COLOR: #000000
+}
+.ttltxt-wht {
+	FONT-SIZE: 10px; COLOR: #ffffff; FONT-FAMILY: Verdana,Sans-serif; TEXT-DECORATION: none
+}
+.ttltxt-wht:hover {
+	COLOR: #ffcc00
+}
+.ttltxt-wht:visited {
+	COLOR: #ffffff
+}
+.wht {
+	COLOR: #ffffff; TEXT-DECORATION: none
+}
+.wht:hover {
+	COLOR: #ffcc00
+}
+.wht:visited {
+	COLOR: #ffffff
+}
+.wht-arw {
+	FONT-WEIGHT: bold; COLOR: #ffffff
+}
+.footer1 {
+	COLOR: #666666; TEXT-DECORATION: none
+}
+.footer1a {
+	COLOR: #666666
+}
+.footer2 {
+	COLOR: #ffffff; TEXT-DECORATION: none
+}
+.footer1-neg {
+	COLOR: #cccccc; TEXT-DECORATION: none
+}
+.footer1a-neg {
+	COLOR: #cccccc
+}
+.footer2-neg {
+	COLOR: #000000; TEXT-DECORATION: none
+}
