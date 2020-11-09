@@ -1,7 +1,7 @@
 import pkg.*;
 public class starter implements InputControl, InputKeyControl 
 {
-		private static Car wc;
+		
 			
         public static void main(String args[])
         {
@@ -12,9 +12,6 @@ public class starter implements InputControl, InputKeyControl
 			// please leave following line alone, necessary for keyboard input
 			KeyController kC = new KeyController(Canvas.getInstance(),new starter());
 		
-		
-			wc = new WilliamCarP4(300,30);
-			wc.fill();
 			
 		}
 		
