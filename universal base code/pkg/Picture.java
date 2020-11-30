@@ -65,7 +65,7 @@ public class Picture implements Shape
         try
         {
             this.source = source;
-            if (source.startsWith("http://"))
+            if (source.startsWith("http://") || source.startsWith("https://"))
                 image = ImageIO.read(new URL(source).openStream());
             else
                 image = ImageIO.read(new File(source));
