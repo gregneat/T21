@@ -10,7 +10,7 @@ public class starter {
 		int[] group;
 		EasyReader in = new EasyReader();
 		int num;
-		int counter = 1;
+		int counter = 0;
 		System.out.print("How many elements do you want: ");
 		num = in.readInt();
 		group = biden(num);
