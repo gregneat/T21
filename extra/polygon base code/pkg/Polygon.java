@@ -23,6 +23,8 @@ package pkg;
  */
 import java.awt.Graphics2D;
 import java.awt.Rectangle;
+import java.util.ArrayList;
+import pkg.*;
 
 public class Polygon implements Shape {
     private Color color = Color.BLACK;
@@ -50,6 +52,18 @@ public class Polygon implements Shape {
         poly = new java.awt.Polygon(xPoints, yPoints, nSides);
 
     }
+	
+	public Polygon(Coordinate[] coors) {
+		ArrayList<Integer> xs = new ArrayList<Integer>();
+		ArrayList<Integer> ys = new ArrayList<Integer>();
+		
+		for (int i = 0; i < coors.length; i++) {
+			xs.add(coors[i].intX());
+			ys.add(coors[i].intY());
+		}
+		
+		poly = new java.awt.Polygon(toArray(xs), toArray(ys), coors.length);
+	}
 
     /**
      * Gets the leftmost x-position of this rectangle.
@@ -154,4 +168,12 @@ public class Polygon implements Shape {
     public boolean contains(Rectangle a) {
         return poly.contains(new java.awt.geom.Rectangle2D.Double(a.getX(), a.getY(), a.getWidth(), a.getHeight()));
     }
+	
+	private int[] toArray(ArrayList<Integer> list) {
+		int[] nums = new int[list.size()];
+		for (int i = 0; i < list.size(); i++) {
+			nums[i] = list.get(i);
+		}
+		return nums;
+	}
 }
