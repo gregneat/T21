@@ -21,7 +21,7 @@ public class Rectangle implements Shape
         y = 0;
         width = 0;
         height = 0;
-    }       
+    }
 
     /**
        Constructs a rectangle.
@@ -59,7 +59,7 @@ public class Rectangle implements Shape
     /**
        Gets the width of this rectangle.
        @return the width
-    */    
+    */
     public int getWidth()
     {
         return (int) Math.round(width);
@@ -68,7 +68,7 @@ public class Rectangle implements Shape
     /**
        Gets the height of this rectangle.
        @return the height
-    */    
+    */
     public int getHeight()
     {
         return (int) Math.round(height);
@@ -128,6 +128,14 @@ public class Rectangle implements Shape
         Canvas.getInstance().show(this);
     }
 
+    /**
+        Undraws this rectangle.
+    */
+    public void undraw()
+    {
+        Canvas.getInstance().unshow(this);
+    }
+
     public String toString()
     {
         return "Rectangle[x=" + getX() + ",y=" + getY() + ",width=" + getWidth() + ",height=" + getHeight() + "]";
@@ -148,11 +156,11 @@ public class Rectangle implements Shape
         }
     }
 	// added by Neato 10/21/18
-	
+
 	public boolean contains(Rectangle a)
 	{
 		if(x < a.getX() + a.getWidth() && x + width > a.getX() && y < a.getY() + a.getHeight() && y + height > a.getY())
-		{ 
+		{
 			return true;
 		}
 		return false;

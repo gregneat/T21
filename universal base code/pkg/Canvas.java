@@ -38,11 +38,20 @@ public class Canvas
             if (background != null)
             {
                 g.drawImage(background, 0, 0, null);
-            }               
+            }
             for (Shape s : new ArrayList<Shape>(shapes))
             {
                 Graphics2D g2 = (Graphics2D) g.create();
-                s.paintShape(g2);
+                /**
+                    Added null check b/c I think the graphics
+                    are rendered async, so when undrawing it
+                    has a chance to try to render something
+                    which doesnt exist.
+                */
+                if (s != null)
+                {
+                    s.paintShape(g2);
+                }
                 g2.dispose();
             }
         }
@@ -83,16 +92,16 @@ public class Canvas
         }
         else
         {
-            final String SAVEFILE ="canvas.png";
+            final String SAVEFILE = "canvas.png";
             final Thread currentThread = Thread.currentThread();
-            Thread watcherThread = new Thread() 
+            Thread watcherThread = new Thread()
                 {
                     public void run()
                     {
                         try
                         {
                             final int DELAY = 10;
-                            
+
                             while (currentThread.getState() != Thread.State.TERMINATED)
                             {
                                 Thread.sleep(DELAY);
@@ -123,6 +132,14 @@ public class Canvas
         repaint();
     }
 
+	public void unshow(Shape s)
+	{
+		if (shapes.contains(s)) {
+			shapes.remove(s);
+		}
+		repaint();
+	}
+
     public void repaint()
     {
         if (frame == null) return;
@@ -142,7 +159,7 @@ public class Canvas
      * Pauses so that the user can see the picture before it is transformed.
      */
    // invented by Dylan sometime academic year 18'-19'
-	public static void pause(int td) 
+	public static void pause(int td)
 	{
 	  try {
 		Thread.sleep(td);
@@ -151,8 +168,8 @@ public class Canvas
 	  }
 	}
 	// made by Neato in summer 2019 rework of AREPOS
-	
-    public static int rand(int r) 
+
+    public static int rand(int r)
 	{
 	  return (int)(Math.random()*r);
 	}
@@ -194,11 +211,11 @@ public class Canvas
         try
         {
             ImageIO.write(image, extension, new File(fileName));
-        } 
+        }
         catch(IOException e)
         {
             System.err.println("Was unable to save the image to " + fileName);
         }
-    	g.dispose();    	
+    	g.dispose();
     }
 }

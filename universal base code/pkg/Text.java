@@ -18,7 +18,7 @@ public class Text implements Shape
      * Constructs a text at a given location.
      * @param x the leftmost x-position of the shape
      * @param y the topmost y-position of the shape
-     * @param message the text string 
+     * @param message the text string
      */
     public Text(double x, double y, String message)
     {
@@ -26,8 +26,8 @@ public class Text implements Shape
         this.y = y;
         label.setText(message);
     }
-    
-    
+
+
     /**
      * Gets the leftmost x-position of the bounding box.
      * @return the leftmost x-position
@@ -45,8 +45,8 @@ public class Text implements Shape
     {
         return (int) Math.round(y - yGrow);
     }
-    
-    
+
+
     /**
      * Gets the width of the bounding box.
      * @return the width
@@ -64,7 +64,7 @@ public class Text implements Shape
     {
         return (int) Math.round(label.getPreferredSize().getHeight() + 2 * yGrow);
     }
-    
+
     /**
      * Moves this text by a given amount.
      * @param dx the amount by which to move in x-direction
@@ -75,8 +75,8 @@ public class Text implements Shape
         x += dx;
         y += dy;
         Canvas.getInstance().repaint();
-    }    
-    
+    }
+
     /**
      * Resizes this text both horizontally and vertically.
      * @param dw the amount by which to resize the width on each side
@@ -106,12 +106,22 @@ public class Text implements Shape
     {
         Canvas.getInstance().show(this);
     }
-   // new method added by Neato to support translating, changing Text Objects
-   public void setText(String update)
+
+    /**
+        Undraws this text.
+    */
+    public void undraw()
+    {
+        Canvas.getInstance().unshow(this);
+    }
+
+    // new method added by Neato to support translating, changing Text Objects
+    public void setText(String update)
 	{
 		label.setText(update);
 		Canvas.getInstance().repaint();
 	}
+
     public String toString()
     {
         return "Text[x=" + getX() + ",y=" + getY() + ",message=" + label.getText() + "]";

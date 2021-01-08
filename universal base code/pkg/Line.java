@@ -103,7 +103,7 @@ public class Line implements Shape
             y1 += dh;
             y2 -= dh;
         }
-            
+
         Canvas.getInstance().repaint();
     }
 
@@ -123,6 +123,14 @@ public class Line implements Shape
     public void draw()
     {
         Canvas.getInstance().show(this);
+    }
+
+    /**
+        Undraws this line.
+    */
+    public void undraw()
+    {
+        Canvas.getInstance().unshow(this);
     }
 
     public String toString()

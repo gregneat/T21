@@ -11,7 +11,7 @@ public class Ellipse implements Shape
     private double y;
     private double width;
     private double height;
-    
+
     /**
      * Constructs an ellipse.
      * @param x the leftmost x-coordinate
@@ -26,7 +26,7 @@ public class Ellipse implements Shape
         this.width = width;
         this.height = height;
     }
-    
+
     /**
      * Gets the leftmost x-position of this ellipse.
      * @return the leftmost x-position
@@ -44,8 +44,8 @@ public class Ellipse implements Shape
     {
         return (int) Math.round(y);
     }
-    
-    
+
+
     /**
      * Gets the width of the bounding box.
      * @return the width
@@ -63,7 +63,7 @@ public class Ellipse implements Shape
     {
         return (int) Math.round(height);
     }
-    
+
     /**
      * Moves this ellipse by a given amount.
      * @param dx the amount by which to move in x-direction
@@ -75,7 +75,7 @@ public class Ellipse implements Shape
         y += dy;
         Canvas.getInstance().repaint();
     }
-    
+
     /**
      * Resizes this ellipse both horizontally and vertically.
      * @param dw the amount by which to resize the width on each side
@@ -118,6 +118,14 @@ public class Ellipse implements Shape
         Canvas.getInstance().show(this);
     }
 
+    /**
+        Undraws this ellipse.
+    */
+    public void undraw()
+    {
+        Canvas.getInstance().unshow(this);
+    }
+
     public String toString()
     {
         return "Ellipse[x=" + getX() + ",y=" + getY() + ",width=" + getWidth() + ",height=" + getHeight() + "]";
@@ -138,11 +146,11 @@ public class Ellipse implements Shape
         }
     }
 	// added by Neato 10/21/18
-	
+
 	public boolean contains(Rectangle a)
 	{
 		if(x < a.getX() + a.getWidth() && x + width > a.getX() && y < a.getY() + a.getHeight() && y + height > a.getY())
-		{ 
+		{
 			return true;
 		}
 		return false;

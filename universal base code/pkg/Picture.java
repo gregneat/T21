@@ -19,7 +19,7 @@ import javax.swing.filechooser.FileFilter;
 public class Picture implements Shape
 {
     private BufferedImage image;
-    private JLabel label = new JLabel();    
+    private JLabel label = new JLabel();
     private String source;
     private double x;
     private double y;
@@ -40,10 +40,10 @@ public class Picture implements Shape
     */
    public Picture(double width, double height)
    {
-      image = new BufferedImage((int) Math.round(width), 
+      image = new BufferedImage((int) Math.round(width),
          (int) Math.round(height), BufferedImage.TYPE_INT_RGB);
       label.setIcon(new ImageIcon(image));
-      label.setText("");      
+      label.setText("");
    }
 
     /**
@@ -57,7 +57,7 @@ public class Picture implements Shape
 
     /**
      * Loads a new image from a given file or URL.
-     * 
+     *
      * @param source the filename or URL
      */
     public void load(String source)
@@ -156,13 +156,13 @@ public class Picture implements Shape
     {
         if (image == null) return new int[0][0];
         int[][] grayLevels = new int[getHeight()][getWidth()];
-      
+
         for (int i = 0; i < grayLevels.length; i++)
             for (int j = 0; j < grayLevels[i].length; j++)
             {
                 int rgb = image.getRGB(j, i);
                 // Use NTSC/PAL algorithm to convert RGB to gray level
-                grayLevels[i][j] = (int)(0.2989 * ((rgb >> 16) & 0xFF) + 0.5866 * ((rgb >> 8) & 0xFF) + 0.1144 * (rgb & 0xFF));	       
+                grayLevels[i][j] = (int)(0.2989 * ((rgb >> 16) & 0xFF) + 0.5866 * ((rgb >> 8) & 0xFF) + 0.1144 * (rgb & 0xFF));
             }
         return grayLevels;
     }
@@ -180,7 +180,7 @@ public class Picture implements Shape
                 image.setRGB(i, j, rgb);
             }
         label.setIcon(new ImageIcon(image));
-        label.setText("");      
+        label.setText("");
     }
 
     public String toString()
@@ -291,6 +291,14 @@ public class Picture implements Shape
     {
         Canvas.getInstance().show(this);
     }
+	
+	/**
+	Undraws this picture.
+	*/
+	public void undraw()
+	{
+		Canvas.getInstance().unshow(this);
+	}
 
     /**
      * Draws this shape.
@@ -305,7 +313,7 @@ public class Picture implements Shape
             {
                 label.setBounds(0, 0, dim.width, dim.height);
                 g2.translate(getX(), getY());
-                g2.scale((image.getWidth() + 2 * xGrow) / dim.width, 
+                g2.scale((image.getWidth() + 2 * xGrow) / dim.width,
                     (image.getHeight() + 2 * yGrow) / dim.height);
                 label.paint(g2);
             }
