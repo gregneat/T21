@@ -1,1 +1,1 @@
-py yt2url.pyc
+py yt2url.py
